@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Zoe Tijerina
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+A simple diagnostic quiz to determine whether the person with symptoms might have either a cold or be experiencing allergies.
  
 Known Issues:
-blah, blah, blah, blah
+Limited to only six questions; automated response (lacks human judgment); only two responses (yes/no) available; may overlook other diagnoses that could manifest in similar ways to the common cold or allergies.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -96,7 +96,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>    
+        <p>Are your eyes watery or itchy?</p>
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
+	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
     	</div>
 </div>
 
@@ -107,6 +109,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
+		<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
+		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
 	</div>
 </div>	
 	
@@ -117,6 +121,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
+		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
+		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
 	</div>
 </div>	
 
@@ -127,6 +133,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
+		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
+		<a href="#five"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 	
 <!-- insert additional question for cold below -->
@@ -140,6 +148,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>[research this--cold]</p>
+		<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">?</a>
+		<a href="#six"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">?</a>
 	</div>
 </div>	
 	
@@ -153,7 +163,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>[research this--allery]</p>
+		<p>[research this--allergy]</p>
+		<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">?</a>
+		<a href="#results"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">?</a>
 	</div>
 </div>	
 
