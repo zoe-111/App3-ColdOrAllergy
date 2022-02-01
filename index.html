@@ -35,6 +35,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
+// allergy count alert removed	
+	
 <script>
         var allergy_count = 0;
         var cold_count = 0;
@@ -42,13 +44,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);
-
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+	
+
+//Results page forumla. Diplays survey results by percentage
+        }
+	function getResults(){
+		var allergyPercent = 100 * (allergy_count/(allergy_count + cold_count));
+		var coldPercent = 100 * (cold_count/(allergy_count + cold_count));
+		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+	}
 
   </script>
 
@@ -86,10 +95,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<a href="#one" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange"> Get Started! </a>
 	
+	<!--All buttons changed from source code to be dark grey with rounded edges. They cange to orange when hovered over -->
+	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+	
+<!-- diagnostic questions start here -->
+	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -139,7 +153,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#five"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 	
-<!-- insert additional question for cold below -->
+<!-- additional diagnostic questions below -->
 	
 </div>	
 
@@ -149,13 +163,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>[research this--cold]</p>
+		<p>Are you experiencing general body aches or pains that cannot be explained by alternate causes (ex. rigorous exercise)?</p>
 		<a href="#six"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
 		<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 </div>	
 	
-<!-- insert additional question for allergy below -->
 	
 </div>	
 
@@ -165,11 +178,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>[research this--allergy]</p>
-		<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
-		<a href="#results"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
+		<p>Are your symptoms set off by certain stimuli (ex. going outside, being new animals,</p>
+		<a href="#final"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
+		<a href="#final"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 </div>	
+	
+<!-- last page; shows calculated results and probability percentage of cold vs allergies -->
+	
+<div class="page" id="final">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Almost there!</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<a onclick="getResults();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Click here to get your results</a>
+	<p id="results">Results below</p>
+	</div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>Maker Space 2022!</p>
