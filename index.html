@@ -27,13 +27,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
 	
-<!-- for device viewing -->
+<!-- for mobile device viewing -->
    <head> 
       <title>Cold-or-Allergy</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
+	   <!--references stylesheet page to use elements within it. it normalizes html elements and helps remove possible browser inconsistencies -->
    </head> 
 
 	
@@ -51,7 +52,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function allergyAdd(){
             allergy_count = allergy_count + 1;
         }
-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
@@ -114,12 +114,13 @@ When ran, it will divide the number of allergy_count responses by the total numb
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange"> Get Started! </a>
-	
+
 		<!--All buttons changed from source code to be dark grey with rounded edges. They change to orange when hovered over -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+		<!--disclaimers -->
 
 	
 	
@@ -127,17 +128,20 @@ When ran, it will divide the number of allergy_count responses by the total numb
 <!-- diagnostic questions start here -->
 	
 <div class="page" id="one">
+		<!-- id assigns this new page a "name" so that it can be targeted later if necessary. for instance, if we needed to link back to this first question, we could do so using it's id "one" -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p>
+		<!-- first question -->
 		<p>
 			<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
 			<a href="#two"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 			
 			<!--a href links will add 1 value to either cold or allergy functions upon clicking, and redirect user to next question/page -->
+			<!-- new page redirection is done by targeting next page using it's div id -->
 			
 		</p>
     	</div>
@@ -250,6 +254,13 @@ When ran, it will divide the number of allergy_count responses by the total numb
 	</div>
 </div>	
 	
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>
+	
+	
+	
 <!-- last page; shows calculated results and probability percentage of cold vs allergies -->
 	
 	
@@ -279,6 +290,7 @@ When ran, it will divide the number of allergy_count responses by the total numb
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p> Maker Space 2022! </p>
 </footer>
+	<!-- note for future: why is there a small white/blank space in the far left area of all the footers except for the final page and question 4? (not yet sure about question 6, that update is within the commit currently being written) -->
 
 </body>
 </html>
