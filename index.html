@@ -44,7 +44,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var cold_count = 0;
 	//cold count and allergy count set to 0 initially to ensure proper percentages
 	
-	var finalResults = document.getElementById("results").style.display = "";
+	var finalResults = document.getElementById("percentages").style.display = "";
 	//for results page
 
 
@@ -63,7 +63,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function getResults(){
 		var allergyPercent = 100 * (allergy_count/(allergy_count + cold_count));
 		var coldPercent = 100 * (cold_count/(allergy_count + cold_count));
-		var finalResults = document.getElementById("results").style.display = "";
+		var finalResults = document.getElementById("percentages").style.display = "";
 		document.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
 			//added "%" after percent display so it's not just the numbers
 			//percentages should be hidden until button is clicked
@@ -206,7 +206,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Almost there!</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
+	<div id="percentages" class="w3-container" style="display:none">
+	     <!-- style displaynone helps to hide value until results button is clicked -->
 		<p> </p>
 			<!-- paragraph tags to improve spacing with button; it presses right up against the border; ideally this will create a slight buffer to make it more visually streamlined/appealing -->
 			<!-- note to self for future: find way to do this without having to just put in a blank paragraph tag -->
@@ -215,8 +216,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p id="getResults();"></p>
 		<!--removed text between paragraph tags; looked weird -->
 		<!-- changed "results" to "getResults():"--should display results function now -->
-	<div id="getResults();" style="display:none">
-	     <!-- style displaynone helps to hide value until results button is clicked -->
 	</div>
 	
 <!-- above button should display percantage results upon being clicked -->
