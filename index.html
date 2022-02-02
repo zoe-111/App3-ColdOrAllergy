@@ -208,13 +208,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Almost there!</h1>
 	</div>
 	
-	<div id="results" class="w3-container" "percentages" style="display:none">
-	     <!-- style displaynone helps to hide value until results button is clicked -->
-		<p> </p>
+	<p> </p>
 			<!-- paragraph tags to improve spacing with button; it presses right up against the border; ideally this will create a slight buffer to make it more visually streamlined/appealing -->
 			<!-- note to self for future: find way to do this without having to just put in a blank paragraph tag -->
-	<button onclick="percentages" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Click here to get your results</button>
+	<button onclick="getResults(;" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Click here to get your results</button>
 		<!--final results should be hidden until button is clicked, then results should pop up -->
+	<div id="content" class="w3-container" "percentages" style="display:none">
+	     <!-- style displaynone helps to hide value until results button is clicked -->
 	<p id="percentages;"></p>
 		<!--removed text between paragraph tags; looked weird -->
 		<!-- changed "results" to "getResults():"--should display results function now -->
