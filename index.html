@@ -58,7 +58,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//functions for adding values when an answer is clicked
 	
 
-//Results page forumla. Diplays survey results by percentage
+/*Results page forumla. Diplays survey results by percentage
+When ran, it will divide the number of allergy_count responses by the total number of questions and multiply it by 100 to achieve a percentage value to be displayed */
         
 	function getResults(){
 		var allergyPercent = 100 * (allergy_count/(allergy_count + cold_count));
@@ -73,8 +74,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </script>
 
 
-
+<!-- allows pages to be displayed -->
 <style>	
+	
 .body {
      margin: 0em;
 }
@@ -95,10 +97,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     z-index: 1;
 }
 </style>
+	
+<!-- z-index is above; brings up targeted page -->	
+	
 
+	
+<!-- first page begins -->
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
+		<!-- targets page and tells browser to display -->
 	<h1>Cold or Allergies?</h1>
+		<!--text gets displayed in colored header at top of page -->
 </div>
 	
 <div id="content" class="w3-container">
@@ -106,12 +115,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<a href="#one" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange"> Get Started! </a>
 	
-<!--All buttons changed from source code to be dark grey with rounded edges. They change to orange when hovered over -->
+		<!--All buttons changed from source code to be dark grey with rounded edges. They change to orange when hovered over -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+	
+	
 	
 <!-- diagnostic questions start here -->
 	
@@ -132,6 +143,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
+	
+<!-- footer display on results page -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>	
+	
+	
+	
+	
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -143,6 +163,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 </div>	
+	
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>
+	
+	
+	
 	
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -156,6 +184,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>	
+	
+	
+	
+	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
@@ -166,6 +202,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
 		<a href="#five"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
+	
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>
+	
+	
+	
 	
 <!-- additional diagnostic questions below -->
 	
@@ -184,6 +228,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 	
 
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p> Maker Space 2022! </p>
+</footer>
+	
+	
+	
 	<!-- final question -->
 	
 </div>	
@@ -224,6 +274,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <!-- above button should display percantage results upon being clicked -->
 
+	
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p> Maker Space 2022! </p>
 </footer>
