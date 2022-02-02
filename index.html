@@ -26,6 +26,8 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
+	
+<!-- for device viewing -->
    <head> 
       <title>Cold-or-Allergy</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +42,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//allergy count alert from original source code removed 
 	
         var cold_count = 0;
+	//cold count and allergy count set to 0 initially to ensure proper percentages
+	
+	var finalResults = document.getElementById("results");
+	//for results page
 
 
         function allergyAdd(){
@@ -49,14 +55,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+	//functions for adding values when an answer is clicked
 	
 
 //Results page forumla. Diplays survey results by percentage
-        }
+        
 	function getResults(){
 		var allergyPercent = 100 * (allergy_count/(allergy_count + cold_count));
 		var coldPercent = 100 * (cold_count/(allergy_count + cold_count));
-		document.getElementById("final-results").innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+		var finalResults = document.getElementById("results");
+		document.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
+			//added "%" after percent display so it's not just the numbers
+			//percentages should be hidden until button is clicked
 	}
 
   </script>
@@ -95,7 +105,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<a href="#one" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange"> Get Started! </a>
 	
-<!--All buttons changed from source code to be dark grey with rounded edges. They cange to orange when hovered over -->
+<!--All buttons changed from source code to be dark grey with rounded edges. They change to orange when hovered over -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -172,6 +182,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 	
+
+	<!-- final question -->
 	
 </div>	
 
@@ -181,22 +193,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are your symptoms set off by certain stimuli (ex. going outside, being new animals,</p>
-		<a href="#final-results"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
-		<a href="#final-results"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
+		<p>Are your symptoms set off by external stimuli (ex. going outside, being around certain animals such as cats, etc.)</p>
+		<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Yes</a>
+		<a href="#results"  onclick="coldAdd();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">No</a>
 	</div>
 </div>	
 	
 <!-- last page; shows calculated results and probability percentage of cold vs allergies -->
 	
-<div class="page" id="final-results">
+<div class="page" id="results">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Almost there!</h1>
 	</div>
 	
-	<div id="content" class="w3-container">
+	<div id="content" class="w3-container" style="display:none">
+		<!-- style="display:none" helps to hide value until results button is clicked" -->
+		<p> </p>
+			<!-- paragraph tags to improve spacing with button; it presses right up against the border; ideally this will create a slight buffer to make it more visually streamlined/appealing -->
+			<!-- note to self for future: find way to do this without having to just put in a blank paragraph tag -->
 	<a onclick="getResults();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Click here to get your results</a>
-	<p id="final-results"></p>
+		<!--final results should be hidden until button is clicked, then results should pop up -->
+	<p id="results"></p>
 		<!--removed text between paragraph tags; looked weird -->
 	</div>
 	
