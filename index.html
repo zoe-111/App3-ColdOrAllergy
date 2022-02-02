@@ -64,11 +64,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		var allergyPercent = 100 * (allergy_count/(allergy_count + cold_count));
 		var coldPercent = 100 * (cold_count/(allergy_count + cold_count));
 		var finalResults = document.getElementById("percentages"),
-		    displayValue = "";
-  		  if (finalResults.style.display == "")
-   		     displayValue = "none";	
-   				 finalResults.style.display = displayValue;
-		document.getElementById("percentages").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
+		   
+		.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
 			//added "%" after percent display so it's not just the numbers
 			//percentages should be hidden until button is clicked
 
@@ -215,19 +212,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p> </p>
 			<!-- paragraph tags to improve spacing with button; it presses right up against the border; ideally this will create a slight buffer to make it more visually streamlined/appealing -->
 			<!-- note to self for future: find way to do this without having to just put in a blank paragraph tag -->
+
+	<div id="content" class="w3-container">
+		
 	<a onclick="getResults();" class="w3-btn w3-dark-grey w3-round-large w3-hover-orange">Click here to get your results</a>
 		<!--final results should be hidden until button is clicked, then results should pop up -->
-	<div id="content" class="w3-container" "percentages" style="display:none">
-	     <!-- style displaynone helps to hide value until results button is clicked -->
+	
 	<p id="percentages"></p>
-		<!--removed text between paragraph tags; looked weird -->
 		<!-- changed "results" to "getResults():"--should display results function now -->
 	</div>
 	
 <!-- above button should display percantage results upon being clicked -->
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>Maker Space 2022!</p>
+	<p> Maker Space 2022! </p>
 </footer>
 
 </body>
