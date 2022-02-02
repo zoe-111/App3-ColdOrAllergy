@@ -44,8 +44,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var cold_count = 0;
 	//cold count and allergy count set to 0 initially to ensure proper percentages
 	
-	var finalResults = document.getElementById("percentages").style.display = "block";
-	//for results page
+	var finalResults = document.getElementById("percentages");
+	//for storing results 
 
 
         function allergyAdd(){
@@ -68,10 +68,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   		  if (finalResults.style.display == "")
    		     displayValue = "none";	
    				 finalResults.style.display = displayValue;
-		finalResults.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
+		document.getElementById("percentages").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%"; 
 			//added "%" after percent display so it's not just the numbers
 			//percentages should be hidden until button is clicked
-	}
 
   </script>
 
